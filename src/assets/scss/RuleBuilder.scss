@@ -1,0 +1,138 @@
+@import '~foundation-sites/scss/foundation.scss';
+@import '~foundation-sites/scss/util/color';
+
+$light-blue: #e1f1ff;
+
+.demo-container {
+  margin: 40px;
+}
+
+.rule-builder-main {
+  width: 650px;
+
+  .rule-builder-content {    
+    border-left: 2px solid $primary-color;
+  }
+
+  .button-container {
+    margin: 8px 0 0 12px;
+
+    .button {
+      background-color: $white;
+      color: $primary-color;
+      border: 1px solid $light-gray;
+      margin-right: 4px;
+      min-width: 60px;
+      
+      text-transform: uppercase;
+
+      &:hover {
+        background-color: $primary-color;
+        color: $white;
+      }
+    }    
+  }
+
+  .condition-container,
+  .response-container {
+    display: flex;
+    align-items: flex-start;
+    padding: 4px 0 4px 12px;
+    border-bottom: 1px solid $light-gray;
+
+    &:first-child {
+      border-top: 1px solid $light-gray;
+    }
+  }
+
+  .popover {    
+    border: 1px solid $light-gray;
+    position: absolute;
+    top: -8px;
+    background-color: $white;
+  }
+
+  .list-container  {        
+    .list-item {
+      padding: 8px;
+
+      &:hover {
+        background-color: $light-blue;
+      }
+    }
+
+    .checkbox-label {
+      margin-left: 4px;
+    }
+   
+  }
+
+  .logical-operator {
+    padding: 2px 0;
+    min-width: 40px;
+    border: 1px solid $light-gray;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 13px;
+  }
+
+  .variable-wrapper, .operator-wrapper, .operand-wrapper, .response-wrapper {
+    margin: 0 4px;
+    display: inline-block;
+    position: relative;
+    padding: 2px 4px;
+  }
+
+  .operand-wrapper,
+  .operator-wrapper {
+    &:hover {
+      background-color: $light-blue;
+    }
+  }
+
+  span.unit {
+    margin-left: 4px;
+  }
+
+  .clickable {
+    cursor: pointer;
+    color: $primary-color;
+  }
+
+  .button-bar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 8px 20px;
+    border-top: 1px solid $light-gray;
+
+    .ok {
+      display: inline-block;
+      padding: 2px 4px;
+
+      &:hover {
+        background-color: $light-blue;
+      }
+    }
+  }
+
+  .input-container {
+    display: inline-flex;
+
+    input.operand-input {
+      width: 60px;
+      margin-right: 4px;
+    }
+  }
+
+  .Dropdown-control {
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+
+  .Dropdown-arrow {
+    top: 8px;
+  }
+
+}
+
+ 
