@@ -4,6 +4,8 @@
         "sourceMap": true,
         "noImplicitAny": false,
         "module": "commonjs",
+        "declaration": true,
+        "declarationDir": "./dist/src/",
         "target": "es5",
         "jsx": "react",
         "lib": ["es5", "es6", "dom"]

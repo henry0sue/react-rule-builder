@@ -11,7 +11,7 @@ const ruleBuilderConfig: IRuleBuilderConfig = {
   variables: [
     {
       name: 'service',
-      displayName: 'Service Name',
+      displayName: 'Cloud Service',
       singleUse: true,
       operators: [
         {
@@ -80,7 +80,7 @@ const ruleBuilderConfig: IRuleBuilderConfig = {
           type: 'unary',
           operands: [
             {
-              type: 'list'
+              type: 'object'
             }
           ]
         },
@@ -90,7 +90,7 @@ const ruleBuilderConfig: IRuleBuilderConfig = {
           type: 'unary',         
           operands: [
             {
-              type: 'list'
+              type: 'object'
             }
           ]
         },
@@ -119,7 +119,8 @@ const ruleBuilderConfig: IRuleBuilderConfig = {
         operands: [
           {
             type: 'number',
-            unit: 'KB'
+            unit: 'KB',
+            value: ''
           }
         ]
       }, {
@@ -130,7 +131,8 @@ const ruleBuilderConfig: IRuleBuilderConfig = {
         operands: [
           {
             type: 'number',
-            unit: 'KB'
+            unit: 'KB',
+            value: ''
           }
         ]
       },

@@ -9,7 +9,7 @@ module.exports = merge(commonConfig, {
   context: resolve(__dirname, "../../src"),
   entry: "./components/rule-builder/RuleBuilder.tsx",
   output: {
-    filename: "js/bundle.[contenthash].min.js",
+    filename: "index.js",
     path: resolve(__dirname, "../../dist"),
     publicPath: "/",
   },

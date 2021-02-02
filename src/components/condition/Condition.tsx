@@ -132,7 +132,11 @@ export class Condition extends React.Component<IConditionProps, IConditionState>
                 <span className="operand-value" key={v.name}>{index > 0? ', ': ''}{v.displayName || v}</span>
                 )}
                 {
-                  this.state.condition.operator.operands[0].type !== 'list' &&
+                  this.state.condition.operator.operands[0].type === 'object' &&
+                    <span className="operand-value">{this.state.condition.operator.operands[0].value.displayName}</span>
+                } 
+                {
+                  this.state.condition.operator.operands[0].type === 'number' &&
                     <span className="operand-value">{this.state.condition.operator.operands[0].value}</span>
                 } 
                 {
@@ -161,6 +165,12 @@ export class Condition extends React.Component<IConditionProps, IConditionState>
                     onChange={this.unitSelected.bind(this)}/>                   
                 }      
               </div>                          
+            }
+            {
+              this.state.condition.operator.operands[0].editting && this.state.condition.operator.operands[0].type === 'object' &&
+              <PopOver includeButton={false} width={this.state.condition.variable.operandSelectorSize}>
+                <SingleSelectList items={this.state.condition.variable.possibleValues} itemSelected={this.operandSelected.bind(this, this.state.condition.operator.operands[0])}/>
+              </PopOver>
             }            
           </div>
         }        
@@ -176,6 +186,7 @@ export class Condition extends React.Component<IConditionProps, IConditionState>
 
   handleInputChange(event: InputEvent): void {
     this.state.condition.operator.operands[0].value = (event.target as any).value;   
+    this.setState(this.state);
   }
 
   handleKeyDown(event: KeyboardEvent): void {
@@ -212,14 +223,17 @@ export class Condition extends React.Component<IConditionProps, IConditionState>
       operator.operands = oldOperator.operands;
     } 
     this.state.condition.operator = operator;
-    this.setState(this.state);
+    
     this.autoAdvance();
+    this.setState(this.state);
   }
 
   public unitSelected(unit: any): void {
     this.state.condition.operator.operands[0].unit = unit.value;
-    this.state.condition.operator.operands[0].editting = false;
+    this.state.condition.operator.operands[0].editting = false;    
+    this.autoAdvance();
     this.setState(this.state);
+    this.props.onConditionComplete(this.state.condition);
   }
 
   public variableSelected(selected: IConditionVariable): void {
