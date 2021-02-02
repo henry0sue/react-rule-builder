@@ -4,6 +4,9 @@
 ## Screenshot
 ![alt text](https://github.com/henry0sue/react-rule-builder/blob/main/react-rule-builder.png?raw=true)
 
+## Live Demo
+https://henry0sue.github.io/
+
 * **[React](https://facebook.github.io/react/)** (17.x)
 * **[Webpack](https://webpack.js.org/)** (5.x)
 * **[Typescript](https://www.typescriptlang.org/)** (4.x)
