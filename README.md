@@ -1,6 +1,9 @@
 # React Rule Builder
 > A highly configurable, free-flow rule builder component developed with ReactJS
 
+## Screenshot
+![alt text](https://github.com/henry0sue/react-rule-builder/blob/main/react-rule-builder.png?raw=true)
+
 * **[React](https://facebook.github.io/react/)** (17.x)
 * **[Webpack](https://webpack.js.org/)** (5.x)
 * **[Typescript](https://www.typescriptlang.org/)** (4.x)
