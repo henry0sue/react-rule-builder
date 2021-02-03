@@ -2,19 +2,6 @@
 const { resolve } = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-var babelOptions = {
-  "presets": [
-    "react",
-    [
-      "es2015",
-      {
-        "modules": false
-      }
-    ],
-    "es2016"
-  ]
-};
-
 module.exports = {
   resolve: {
     extensions: [".js", ".jsx", ".ts", ".tsx"],

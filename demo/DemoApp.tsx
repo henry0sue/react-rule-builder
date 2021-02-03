@@ -136,7 +136,7 @@ const ruleBuilderConfig: IRuleBuilderConfig = {
           }
         ]
       },
-      {
+     /*  {
         displayName: 'is between',
         name: 'between',
         units: ['KB', 'MB', 'GB'],
@@ -151,7 +151,7 @@ const ruleBuilderConfig: IRuleBuilderConfig = {
             unit: 'KB'
           }
         ]
-      }],
+      } */],
       operatorSelectorSize: '200px',
       operandSelectorSize: '150px'                 
     }

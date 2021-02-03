@@ -16,7 +16,7 @@
   "author": "Henry Sue",
   "license": "MIT",
   "main": "dist/index.js",
-  "typings": "./index.d.ts",
+  "typings": "dist/src/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/henry0sue/react-rule-builder"

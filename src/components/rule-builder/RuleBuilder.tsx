@@ -16,7 +16,7 @@ export interface IRuleBuilderState {
   response: IResponse;
 }
 
-export class RuleBuilder extends React.Component<IRuleBuilderProps, IRuleBuilderState> {
+export default class RuleBuilder extends React.Component<IRuleBuilderProps, IRuleBuilderState> {
   state: IRuleBuilderState;
   constructor(props: any) {
     super(props);
