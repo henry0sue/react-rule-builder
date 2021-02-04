@@ -9,36 +9,127 @@ https://henry0sue.github.io/
 
 
 ## Installation
-1. Clone/download repo
-2. `yarn install` (or `npm install` for npm)
+npm install @henry_sue/react-rule-builder --save
 
 ## Usage
-**Demo**
+````typescript
 
-`yarn run start`
+const ruleBuilderConfig: IRuleBuilderConfig = {
+  variables: [
+    {
+      name: 'activity',
+      displayName: 'Activity',
+      operators: [
+        {
+          displayName: 'is',
+          name: 'is',
+          type: 'unary',
+          operands: [
+            {
+              type: 'object'
+            }
+          ]
+        },
+        {
+          displayName: 'is not',
+          name: 'is_not',
+          type: 'unary',         
+          operands: [
+            {
+              type: 'object'
+            }
+          ]
+        },
+      ],             
+      complex: false,
+      possibleValues: [{
+          name: 'Upload',
+          displayName: 'Upload'
+        }, {
+          name: 'Download',
+          displayName: 'Download'
+        }
+      ],       
+      promptText: 'Select activities',
+      operatorSelectorSize: '80px',
+      operandSelectorSize: '150px'   
+    },
+    {
+      name: 'file-size',
+      displayName: 'File Size',
+      operators: [{
+        displayName: 'is less than',
+        name: '<',
+        type: 'unary',
+        units: ['KB', 'MB', 'GB'],
+        operands: [
+          {
+            type: 'number',
+            unit: 'KB',
+            value: ''
+          }
+        ]
+      }, {
+        displayName: 'is greater than',
+        name: '>',
+        type: 'unary',
+        units: ['KB', 'MB', 'GB'],
+        operands: [
+          {
+            type: 'number',
+            unit: 'KB',
+            value: ''
+          }
+        ]
+      },
+    ],
+      operatorSelectorSize: '200px',
+      operandSelectorSize: '150px'                 
+    }
+  ],
+  variableSelectorSize: '120px',
+  responseConfigs: [
+    {
+      name: 'block',
+      displayName: 'Block'
+    },
+    {
+      name: 'allow',
+      displayName: 'Allow'
+    },
+    {
+      name: 'notify',
+      displayName: 'Notify Admin'
+    }
+  ],
+  responseSelectorSize: '120px'
+}
 
-* Build app continuously (HMR enabled)
-* App served @ `http://localhost:8080`
+const conditions: ICondition[] = [{
+      index: 0,
+      logicalOperator: 'and',
+      variable: {
+        name: null,
+        displayName: null
+      }
+    }];
+    const response: IResponse = {
+      value: {
+        name: null,
+        displayName: null
+      },
+      editting: false
+    };
 
-**Production**
-
-`yarn run build`
+  return (
+    <div className="demo-container">
+      <RuleBuilder conditions={conditions} builderConfig={ruleBuilderConfig} response={response}/>
+      
+    </div>        
+  );
+````
 
 ---
-
-**All commands**
-
-Command | Description
---- | ---
-`yarn run start-dev` | Build app continuously (HMR enabled) and serve @ `http://localhost:8080`
-`yarn run start-prod` | Build app once (HMR disabled) to `/dist/` and serve @ `http://localhost:3000`
-`yarn run build` | Build app to `/dist/`
-`yarn run test` | Run tests
-`yarn run lint` | Run linter
-`yarn run lint --fix` | Run linter and fix issues
-`yarn run start` | (alias of `yarn run start-dev`)
-
-**Note**: replace `yarn` with `npm` in `package.json` if you use npm.
 
 ## See also
 * [React Webpack Babel Starter](https://github.com/vikpe/react-webpack-babel-starter)

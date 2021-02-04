@@ -1,5 +1,5 @@
 {
-  "name": "react-rule-builder",
+  "name": "@henry_sue/react-rule-builder",
   "version": "0.1.0",
   "description": "A highly configurable, free-flow rule builder component developed with ReactJS",
   "keywords": [
